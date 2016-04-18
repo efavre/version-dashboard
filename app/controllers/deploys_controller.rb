@@ -12,8 +12,7 @@ class DeploysController < ApplicationController
   end
 
   def create
-    deploy = Deploy.new(deploy_params)
-    if deploy.save
+    if deploy = Deploy.create(deploy_params)
       render :json => deploy, status: 200
     else
       render :json => {message: "missing paramters"}, status: 400
