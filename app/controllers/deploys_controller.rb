@@ -9,7 +9,6 @@ class DeploysController < ApplicationController
       @applications[deploy.application] = [] if ! @applications[deploy.application]
       @applications[deploy.application] << {environment: deploy.environment, version: deploy.version}
     end
-    p @applications
   end
 
   def create
