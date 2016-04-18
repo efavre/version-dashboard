@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+app1prod1:
+  application: MyApplication
+  version: 1.2.3
+  environment: Production
+
+app1prod2:
+  application: MyApplication
+  version: 1.2.4
+  environment: Production
+
+app1preprod1:
+  application: MyApplication
+  version: 1.2.3
+  environment: Preproduction
+
+app1preprod2:
+  application: MyApplication
+  version: 1.2.4
+  environment: Preproduction
