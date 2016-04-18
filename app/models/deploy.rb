@@ -3,7 +3,7 @@ class Deploy < ActiveRecord::Base
   validates :version, presence: true
   validates :environment, presence: true
 
-  before_create :deactivate_previous_deploys
+  before_save :deactivate_previous_deploys
 
   def deactivate_previous_deploys
     previous_deploys = Deploy.where(active: true, application: self.application, environment: self.environment)
