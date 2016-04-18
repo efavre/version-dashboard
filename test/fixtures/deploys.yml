@@ -4,18 +4,34 @@ app1prod1:
   application: MyApplication
   version: 1.2.3
   environment: Production
+  active: false
 
 app1prod2:
   application: MyApplication
   version: 1.2.4
   environment: Production
-
+  active: true
+  
 app1preprod1:
   application: MyApplication
-  version: 1.2.3
+  version: 1.1.3
   environment: Preproduction
+  active: false
 
 app1preprod2:
   application: MyApplication
-  version: 1.2.4
+  version: 1.1.4
   environment: Preproduction
+  active: true
+
+app2prod1:
+  application: MyApplication2
+  version: 2.3.4
+  environment: Production
+  active: false
+
+app2prod2:
+  application: MyApplication2
+  version: 2.3.5
+  environment: Production
+  active: true

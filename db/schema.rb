@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325102614) do
+ActiveRecord::Schema.define(version: 20160418154128) do
 
   create_table "deploys", force: :cascade do |t|
     t.string   "application"
     t.string   "version"
     t.string   "environment"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "active",      default: true
   end
 
 end
