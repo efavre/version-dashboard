@@ -9,10 +9,13 @@ class DeploysController < ApplicationController
       @applications[deploy.application] = [] if ! @applications[deploy.application]
       @applications[deploy.application] << {environment: deploy.environment, version: deploy.version}
     end
+    render :json => @applications, status: 200
   end
 
   def create
-    if deploy = Deploy.create(deploy_params)
+    deploy = Deploy.new(deploy_params)
+    if deploy.valid?
+      deploy.save
       render :json => deploy, status: 200
     else
       render :json => {message: "missing paramters"}, status: 400
