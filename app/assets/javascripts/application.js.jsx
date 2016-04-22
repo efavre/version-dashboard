@@ -19,8 +19,7 @@
 //= require_tree .
 
 var APPLICATIONS = {};
-var APIRoot = "https://version-dashboard.herokuapp.com";
-var APIEndpoints = {DEPLOYS:  APIRoot + "/deploys"};
+var APIEndpoints = {DEPLOYS:  "/deploys"};
 
 $.ajax(APIEndpoints.DEPLOYS, {
     success: function(data) {
