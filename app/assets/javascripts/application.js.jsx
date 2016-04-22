@@ -18,9 +18,19 @@
 //= require components
 //= require_tree .
 
-var APPLICATIONS = {"ccu":[{"environment":"prod","version":"1.T.4"}],"myApplication2":[{"environment":"Preproduction","version":"2.3.4"},{"environment":"Production","version":"2.3.5"}],"MyApplication":[{"environment":"Production","version":"1.2.4"},{"environment":"Preproduction","version":"1.2.3"}]};
+var APPLICATIONS = {};
+var APIRoot = "https://version-dashboard.herokuapp.com";
+var APIEndpoints = {DEPLOYS:  APIRoot + "/deploys"};
 
-ReactDOM.render(
-<Dashboard applicationsMap={APPLICATIONS} />,
-    document.getElementById('dashboard')
-);
+$.ajax(APIEndpoints.DEPLOYS, {
+    success: function(data) {
+        APPLICATIONS = data;
+        ReactDOM.render(
+            <Dashboard applicationsMap={APPLICATIONS} />,
+            document.getElementById('dashboard')
+        );
+    },
+    error: function() {
+        $('#dashboard').text('An error occurred');
+    }
+});
