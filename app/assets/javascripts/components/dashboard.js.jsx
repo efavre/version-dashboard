@@ -29,11 +29,15 @@ var Application = React.createClass({
         });
 
         return (
-            <div>
-                <h2>{this.props.name}</h2>
-                <ul>
-                    {environmentsList}
-                </ul>
+            <div className="block green">
+                <div className="heading">
+                    {this.props.name}
+                </div>
+                <div className="env-list" >
+                    <ul>
+                        {environmentsList}
+                    </ul>
+                </div>
             </div>
         );
     }
@@ -51,7 +55,7 @@ var Dashboard = React.createClass({
         };
 
         return (
-            <div>
+            <div className="blocks wrapper">
                 {applicationsList}
             </div>
         );
